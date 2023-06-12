@@ -1,37 +1,40 @@
-#include<stdio.h>
-void main()
+#include <stdio.h>
+#include<stdlib.h>
+char *str;
+void strrev(char *str);
+void main() {
+//    char *str; 
+//    scanf("%[^\n]s",*str);
+	str=(char*)malloc(50*sizeof(char));
+
+	printf("enter string:\n");
+	fgets(str,50,stdin);
+   
+	printf("before reversing:%s\n",str);
+	 strrev(str);
+   printf("%s\n",str); 
+
+}
+void strrev(char *str)
 {
-	char str[50],s[50];
-	char *ptr1,*ptr2;
-	int temp=-1;
-	printf("enter string1:\n");
-	scanf("%[^\n]s",str);
-	printf("enter string2:\n");
-	scanf("%s",s);
-	ptr1=str;
-	ptr2=s;
-	while(*ptr1!='\0'&&*ptr2!='\0')
-	{
-		if(*ptr1==*ptr2)
-		{
-			temp=0;
-			ptr1++;
-			ptr2++;
-		//	printf("strings are equal");
-		}
-		else
-		{
-			temp=-1;
-			break;
-		}
-	}
-	if(temp==0)
-	{
-		printf("strings are equal\n");
-	}
-	else
-	{
-		printf("strings are not equal\n");
-	}
-	
+    int temp;
+    int len;
+   // temp=str;
+    while(*str!='\0')
+    {
+        len++;
+        if(*str=='\n')
+        {
+            str='\0';
+        }
+    }
+	printf("%d\n",len);
+    for(int i=0;i<len/2;i++)
+    {
+        temp=str[i];
+        str[i]=str[len-i-1];
+        str[len-i-1]=temp;
+     //   len--;
+    }
+    
 }

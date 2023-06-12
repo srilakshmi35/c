@@ -1,39 +1,24 @@
 #include<stdio.h>
-#include<stdlib.h>
-int strspan(char *s1,char *s2);
+char *strcopy(char *dest,const char* src);
 void main()
 {
-	char *s1,*s2;
-	int res;
-	s1=(char*)malloc(50*sizeof(char));
-	s2=(char*)malloc(50*sizeof(char));
-	printf("enetr string:\n");
-	fgets(s1,50,stdin);
-	printf("enetr string2:\n");
-	fgets(s2,50,stdin);
-	
-	res=strspan(s1,s2);
-	printf("count is:%d\n",res);
+	char src[100],dest[100];
+	scanf("%[^\n]s",src);
+	strcopy(dest,src);
+	printf("%s\n",dest);
 }
-int strspan(char *s1,char *s2)
+char* strcopy(char *dest,const char *src)
 {
-	char *temp;
-	int count=0;
-	temp=s2;
-	while(*s1!='\0')
+
+	while(*src!='\0')
 	{
-		if(*s1==*s2)
+		*dest=*src;
+		dest++;
+		src++;
+		if(*src=='\0')
 		{
-			count++;
-			s1++;
-			s2=temp;
+			*dest='\0';
 		}
-		else if(*s2!='\0')
-		{
-			s2++;
-		}
-		else
-			break;
 	}
-	return count;
 }
+
