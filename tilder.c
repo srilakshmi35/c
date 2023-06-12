@@ -2,6 +2,5 @@
 void main()
 {
 	int a=5;
-	printf("%d\n",a>>2);
+	printf("%d\n",~a);
 }
-

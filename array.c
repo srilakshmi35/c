@@ -1,34 +1,25 @@
 #include<stdio.h>
-#include<stdlib.h>
-//int i;
-int* read_ar(int ar[]);
-int* print_ar(int ar[]);
+int a[100];
 void main()
 {
-	int array[10],*p;
-	//int a[10];
-	p=read_ar(array);
-	printf("%p\n",&array);
-	print_ar(p);
-}
-int*  read_ar(int array[])
-{
-
+//	int n=1,
 	int i;
-	for(i=0;i<10;i++)
+	int a[5];
+//	extern int a;
+	int c=0;
 	{
-		scanf("%d",&array[i]);
+	extern int a[100];
+	for(i=0;i<10;i++) {
+		printf("Enter the %dth element of the array\n", i);
+		scanf("%d",&a[i]);
+		c++;
+	printf("count is:%d\n",c);
+//		c=c+1;
 	}
-	printf("%p\n",&array);
-	return array;
-}
-int* print_ar(int array[])
-{
-	int i;
-	printf("%p\n",&array);
-	for(i=0;i<10;i++)
-	{
-		printf("%d\t",array[i]);
+//	for(i=0;i<10;i++)
+//	{
+//		printf("%d\n",a[i]);
+//	}
+//	printf("count is:%d\n",c);
 	}
-	return array;
 }

@@ -1,9 +1,12 @@
 #include<stdio.h>
-void main()
+
+int main(void)
 {
-	FILE *fp;
-	fp=fopen("abc.txt","w");
-	fputs(fp,"srilakshmi");
-	fprintf(fp,"sri");
-	fclose(fp);
+	int var;
+	printf("Enter the value\n");
+	scanf("%d", &var);
+	printf("var = %d\n", var);
+	
+	return 0;
 }
+
